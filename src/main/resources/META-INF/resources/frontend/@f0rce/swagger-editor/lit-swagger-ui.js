@@ -8,7 +8,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 import { LitElement, html, css } from "lit";
 
-import { SwaggerUIBundle } from "swagger-ui-dist";
+import { SwaggerUIBundle } from "swagger-ui-dist/swagger-ui-bundle";
 import { swaggerUIStyle } from "./swagger-ui.css.js";
 
 class LitSwaggerUI extends LitElement {

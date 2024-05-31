@@ -7171,6 +7171,15 @@ export const swaggerUIStyle = css`
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+  @media (max-width: 640px) {
+    .swagger-ui .opblock-tag small,
+    .swagger-ui .opblock-tag > div {
+      flex: 1;
+    }
+  }
+  .swagger-ui .opblock-tag .info__externaldocs {
+    text-align: right;
+  }
   .swagger-ui .parameter__type {
     color: #3b4151;
     font-family: monospace;
@@ -7318,6 +7327,12 @@ export const swaggerUIStyle = css`
     flex-shrink: 0;
     max-width: calc(100% - 110px - 15rem);
   }
+  @media (max-width: 640px) {
+    .swagger-ui .opblock .opblock-summary-path {
+      flex-shrink: 1;
+      max-width: 100%;
+    }
+  }
   .swagger-ui .opblock .opblock-summary-path__deprecated {
     text-decoration: line-through;
   }
@@ -7348,6 +7363,12 @@ export const swaggerUIStyle = css`
   .swagger-ui .opblock .opblock-summary:hover .view-line-link {
     margin: 0 5px;
     width: 18px;
+  }
+  .swagger-ui
+    .opblock
+    .opblock-summary:hover
+    .view-line-link.copy-to-clipboard {
+    width: 24px;
   }
   .swagger-ui .opblock.opblock-post {
     background: rgba(73, 204, 144, 0.1);
@@ -7640,7 +7661,6 @@ export const swaggerUIStyle = css`
     font-size: 12px;
     font-weight: 600;
     -webkit-hyphens: auto;
-    -ms-hyphens: auto;
     hyphens: auto;
     margin: 0;
     padding: 10px;
@@ -8003,6 +8023,10 @@ export const swaggerUIStyle = css`
   .swagger-ui .curl-command .copy-to-clipboard button {
     height: 18px;
   }
+  .swagger-ui .opblock .opblock-summary .view-line-link.copy-to-clipboard {
+    height: 26px;
+    position: unset;
+  }
   .swagger-ui select {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -8039,12 +8063,25 @@ export const swaggerUIStyle = css`
       min-width: 180px;
     }
   }
+  @media (max-width: 640px) {
+    .swagger-ui .opblock-body select {
+      min-width: 100%;
+      width: 100%;
+    }
+  }
   .swagger-ui label {
     color: #3b4151;
     font-family: sans-serif;
     font-size: 12px;
     font-weight: 700;
     margin: 0 0 5px;
+  }
+  .swagger-ui input[type="email"],
+  .swagger-ui input[type="file"],
+  .swagger-ui input[type="password"],
+  .swagger-ui input[type="search"],
+  .swagger-ui input[type="text"] {
+    line-height: 1;
   }
   @media (max-width: 768px) {
     .swagger-ui input[type="email"],
@@ -8344,6 +8381,7 @@ export const swaggerUIStyle = css`
   .swagger-ui .model .property.primitive {
     color: #6b6b6b;
   }
+  .swagger-ui .model .external-docs,
   .swagger-ui table.model tr.description {
     color: #666;
     font-weight: 400;
@@ -8366,6 +8404,12 @@ export const swaggerUIStyle = css`
   }
   .swagger-ui table.model tr.extension td:last-child {
     vertical-align: top;
+  }
+  .swagger-ui table.model tr.external-docs td:first-child {
+    font-weight: 700;
+  }
+  .swagger-ui table.model tr .renderedMarkdown p:first-child {
+    margin-top: 0;
   }
   .swagger-ui section.models {
     border: 1px solid rgba(59, 65, 81, 0.3);
@@ -8492,6 +8536,7 @@ export const swaggerUIStyle = css`
   .swagger-ui .servers > label select {
     max-width: 100%;
     min-width: 130px;
+    width: 100%;
   }
   .swagger-ui .servers h4.message {
     padding-bottom: 2em;
@@ -8576,12 +8621,15 @@ export const swaggerUIStyle = css`
     margin-bottom: 2em;
     width: 99%;
   }
-  .swagger-ui .parameters-col_description input[type="text"] {
+  .swagger-ui .parameters-col_description input {
     max-width: 340px;
     width: 100%;
   }
   .swagger-ui .parameters-col_description select {
     border-width: 1px;
+  }
+  .swagger-ui .parameters-col_description .markdown p {
+    margin: 0;
   }
   .swagger-ui .parameter__name {
     color: #3b4151;
@@ -8636,6 +8684,9 @@ export const swaggerUIStyle = css`
   }
   .swagger-ui .response-col_description {
     width: 99%;
+  }
+  .swagger-ui .response-col_description .markdown p {
+    margin: 0;
   }
   .swagger-ui .response-col_links {
     min-width: 6em;
@@ -8805,6 +8856,7 @@ export const swaggerUIStyle = css`
     justify-content: flex-end;
   }
   .swagger-ui .auth-wrapper .authorize {
+    margin-left: 10px;
     margin-right: 10px;
     padding-right: 20px;
   }

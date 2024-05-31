@@ -12,8 +12,7 @@ import com.vaadin.flow.shared.Registration;
 
 /** @author David "F0rce" Dodlek */
 @Tag("lit-swagger-ui")
-@NpmPackage(value = "swagger-ui-dist", version = "4.12.0")
-@NpmPackage(value = "lit", version = "2.2.6")
+@NpmPackage(value = "swagger-ui-dist", version = "4.15.2")
 @JsModule("./@f0rce/swagger-editor/lit-swagger-ui.js")
 public class SwaggerUI extends Component implements HasSize, HasComponents {
 
